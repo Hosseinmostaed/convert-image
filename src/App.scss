@@ -1,0 +1,430 @@
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+  .button {
+    font-size: 0.5rem !important;
+
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+  .button {
+    font-size: 0.5rem !important;
+
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+
+  .button {
+    font-size: 0.5rem !important;
+
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+  /* optional reset for presentation */
+  * {
+    font-family: Arial;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  .container {
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+  }
+  button:hover {
+    cursor: pointer;
+  }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+  .button {
+    font-size: 0.5rem !important;
+
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+  .button {
+    font-size: 0.5rem !important;
+
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+  @keyframes backgroundColorPalette {
+    0% {
+      background: #ee6055;
+    }
+    25% {
+      background: #60d394;
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+
+  body {
+    animation-name: backgroundColorPalette;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    text-align: center;
+  }
+  .button {
+    font-size: 0.5rem !important;
+
+    &:hover {
+      color: #fff;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+}
