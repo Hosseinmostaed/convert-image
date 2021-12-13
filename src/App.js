@@ -2,6 +2,7 @@ import "./App.scss";
 import BUTTON from "./components/button/button.componennt";
 import BUTTON2 from "./components/button2/button.componennt2";
 import INPUT from "./components/input/input.component";
+import { InputBox } from "./components/input_box/input_box.component";
 import { useRef } from "react";
 import { toast } from "react-toastify";
 // Import toastify css file
@@ -78,17 +79,51 @@ function App() {
           ctx.drawImage(img, 0, 0);
           const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-          for (let i = 0; i < imgData.data.length; i += 4) {
-            let count =
-              imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2];
-            let color = 0;
-            if (count > 510) color = 255;
-            else if (count > 255) color = 127.5;
+          var boxNumber = document.getElementById("enterInput").value;
+          boxNumber = boxNumber * boxNumber * 4;
+          for (let i = 0; i < imgData.data.length; i += boxNumber) {
+            // find low color
+            let cont = i + boxNumber;
+            let average = 100000;
+            let colo = 0;
+            let k = 0;
+            for (let j = i; j < cont; j += 4) {
+              let count =
+                imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2];
+              if (count < average) {
+                average = colo = count;
 
-            imgData.data[i] = color;
-            imgData.data[i + 1] = color;
-            imgData.data[i + 2] = color;
-            imgData.data[i + 3] = 255;
+                k = i;
+                while (k < j) {
+                  imgData.data[j] = colo;
+                  imgData.data[j + 1] = colo;
+                  imgData.data[j + 2] = colo;
+                  imgData.data[j + 3] = 255;
+                  k++;
+                }
+                if (k === 0) {
+                  imgData.data[j] = colo;
+                  imgData.data[j + 1] = colo;
+                  imgData.data[j + 2] = colo;
+                  imgData.data[j + 3] = 255;
+                }
+              } else {
+                imgData.data[j] = colo;
+                imgData.data[j + 1] = colo;
+                imgData.data[j + 2] = colo;
+                imgData.data[j + 3] = 255;
+              }
+            }
+            // let count =
+            //   imgData.data[i] + imgData.data[i + 1] + imgData.data[i + 2];
+            // let color = 0;
+            // if (count > 510) color = 255;
+            // else if (count > 255) color = 127.5;
+
+            // imgData.data[i] = color;
+            // imgData.data[i + 1] = color;
+            // imgData.data[i + 2] = color;
+            // imgData.data[i + 3] = 255;
           }
 
           ctx.putImageData(imgData, 0, 0);
@@ -107,6 +142,7 @@ function App() {
         <canvas id="myCanvas" ref={ctxRef} />
       </div>
       <div className="column">
+        <InputBox />
         <BUTTON2 text="Create gray image" onClick={createBlackAndWhite} />
         <BUTTON text="Download image" onClick={downloadImage} />
         <INPUT onChange={handleChange} />
