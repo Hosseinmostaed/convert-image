@@ -10,6 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 // toast-configuration method,
 // it is compulsory method.
+var x = "";
 toast.configure();
 
 function App() {
@@ -24,7 +25,6 @@ function App() {
   };
 
   const handleChange = (e) => {
-    // debugger;
     const file = e.target.files[0];
     const reader = new FileReader();
     if (file !== undefined) {
@@ -46,7 +46,7 @@ function App() {
   };
 
   const downloadImage = () => {
-    // debugger;
+    debugger;
     var download = document.getElementById("download");
     var image = document
       .getElementById("myCanvas")
@@ -62,6 +62,7 @@ function App() {
       // debugger;
       download.setAttribute("href", image);
     }
+    window.location.reload(false);
   };
 
   //create randome number
@@ -202,7 +203,11 @@ function App() {
   };
 
   const createBlackAndWhite = () => {
-    // debugger;
+    debugger;
+    if (x === "X") {
+      window.location.reload(false);
+    }
+    x = "X";
     if (imgRef.current) {
       const img = imgRef.current;
       const canvas = ctxRef.current;
@@ -341,7 +346,7 @@ function App() {
           }
 
           let end = 0;
-          while (end < 40) {
+          while (end < 20) {
             for (let index = 0; index < strUser; index++) {
               color2[index] = calculateAverageColor(list2[index]);
             }
@@ -525,7 +530,7 @@ function App() {
       </div>
       <div className="column">
         <InputBox />
-        <BUTTON2 text="Create gray image" onClick={createBlackAndWhite} />
+        <BUTTON2 text="Create new image" onClick={createBlackAndWhite} />
         <BUTTON text="Download image" onClick={downloadImage} />
         <INPUT onChange={handleChange} />
       </div>
